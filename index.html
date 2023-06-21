@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alexandra's CV</title>
+    <link rel="icon" type="image/x-icon" href="selfie.jfif" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -13,17 +14,22 @@
   </head>
   <body>
     <header>
-      <h1>Alexandra Bichir</h1>
-      <div>
-        <img src="selfie.jfif" alt="" height="100" id="pozaProfil" />
+      <div id="header-wrapper">
+        <div id="my-picture">
+          <img src="selfie.jfif" alt="" height="100" />
+        </div>
+        <div id="header-info">
+          <h1>Alexandra Bichir</h1>
+          <h2 id="job-title">HR Consultant @ TEC:AGENCY</h2>
+        </div>
       </div>
-      <div>
-        <h2 id="job-title">HR Consultant @ TEC:AGENCY</h2>
-      </div>
+
       <ul id="top-menu-bar">
-        <li><a href="#" onclick="showPage('home')">Home</a></li>         
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
         <li><a href="#" onclick="showPage('skills')"> Skills</a></li>
-        <li><a href="#" onclick="showPage('languages')"> Known Languages</a></li>
+        <li>
+          <a href="#" onclick="showPage('languages')"> Known Languages</a>
+        </li>
         <li><a href="#" onclick="showPage('projects')">Projects</a></li>
       </ul>
     </header>
@@ -65,7 +71,7 @@
           <h2>Menu 2</h2>
         </section>
       </div>
-  
+
       <div id="main">
         <div class="page" id="home">
           <p><strong>Welcome</strong> message!</p>
@@ -105,14 +111,15 @@
           <h2>Projects</h2>
         </div>
       </div>
-  </section>
+    </section>
 
     <footer>
       <a
         href="https://www.linkedin.com/in/alexandra-bichir-02b35b203/"
         target="_blank"
-        ><i style="font-size:24px" class="fa">&#xf08c;</i> LinkedIn
-      </i>
+      >
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        LinkedIn
       </a>
     </footer>
     <script src="index.js"></script>
