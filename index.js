@@ -1,4 +1,4 @@
-var activePage = "home";
+var activePage = "skills";
 
 //utilities functions
 
@@ -38,7 +38,7 @@ function clickOnMenu(e) {
     var id = link.dataset.page;
     //console.warn("click %o menu", e.target.getAttribute("data-page"));
     //console.warn("click %o menu", id, e.target.matches("a"));
-    console.warn("click %o menu", id);
+    //console.warn("click %o menu", id);
     if (id) {
       //if (e.target.matches("a") & id) {
       showPage(id);
@@ -46,8 +46,17 @@ function clickOnMenu(e) {
   }
 }
 
+function showSkills() {
+  var skills = ["HTML", "css", "JS"];
+  var htmlSkills = skills.map(function (skill) {
+    //<li class="favorite">HTML</li>
+    return `<li>${skill}</li>`;
+  });
+  var ul = $("#skills ul");
+  ul.innerHTML = htmlSkills.join("");
+}
 //start our code
 
 showPage(activePage);
-
 $("#top-menu-bar").addEventListener("click", clickOnMenu);
+showSkills();
