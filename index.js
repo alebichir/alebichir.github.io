@@ -51,21 +51,25 @@ function showSkills(skills) {
     //<li class="favorite">HTML</li>
     console.info("skill", skill);
     var cls = skill.favorite ? "favorite" : "";
-    return `<li class="${cls}">${skill.name}</li>`;
-    console.info("sills", htmlSkills);
+    return `<li class="${cls}">${skill.name} <span>- ${skill.endorcement}</span></li>`;
   });
+  console.info("skills", htmlSkills);
   var ul = $("#skills ul");
   ul.innerHTML = htmlSkills.join("");
 }
 
 function loadSkills() {
+  //console.time("load");
   var response = fetch("skills.json");
   var loaded = response.then(function (r) {
     return r.json();
   });
   loaded.then(function (skills) {
     showSkills(skills);
+    //console.timeEnd("load");
+    //console.warn("ready");
   });
+  //console.warn("end");
 }
 
 //start our code
