@@ -171,8 +171,77 @@ footer a:hover {
   background-color: #0798ab;
 }
 
-th,
+#languages table {
+  width: 50%;
+  min-width: 330px;
+  border-collapse: collapse;
+}
+
+#languages th {
+  background: #d1e7ea;
+  text-align: left;
+}
+
+#languages table th,
+#languages table td {
+  border: 1px solid black;
+  border: 1px solid #0798ab;
+  padding: 5px;
+}
+
+#text-carousel {
+  min-height: 60px;
+  padding: 3px 0;
+  border-top: 2px solid #ffffff33;
+}
+
+.text-carousel-wrap {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #0798ab;
+  overflow: hidden;
+  width: 100%;
+}
+
+.text-carousel-line {
+  white-space: nowrap;
+  transition: 2s all ease;
+  margin-left: 0;
+}
+
+#tableOfNine tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+
+#tableOfNine tbody tr:nth-child(even) {
+  background-color: #e495e4;
+}
+
+#tableOfNine {
+  background-color: #ff33cc;
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 10px;
+}
+
+#tableOfFour tbody tr:nth-child(odd) {
+  background-color: aqua;
+}
+
+#tableOfFour tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+#tableOfFour {
+  background-color: aqua;
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 10px;
+}
+
+#tableOfFour tr,
+td #tableOfNine tr,
 td {
   border: 1px solid black;
-  border-radius: 10px;
 }

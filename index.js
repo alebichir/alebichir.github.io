@@ -1,4 +1,4 @@
-var activePage = "home";
+var activePage = "skills";
 
 //utilities functions
 
@@ -46,12 +46,21 @@ function clickOnMenu(e) {
   }
 }
 
+function sortByEndorcements(a, b) {
+  return b.endorcements - a.endorcements;
+}
+
+function sortByName(a, b) {
+  return a.name.localeCompare(b.name);
+}
+
 function showSkills(skills) {
+  skills.sort(sortByEndorcements);
   var htmlSkills = skills.map(function (skill) {
     //<li class="favorite">HTML</li>
     console.info("skill", skill);
     var cls = skill.favorite ? "favorite" : "";
-    return `<li class="${cls}">${skill.name} <span>- ${skill.endorcement}</span></li>`;
+    return `<li class="${cls}">${skill.name} <span>- ${skill.endorcements}</span></li>`;
   });
   console.info("skills", htmlSkills);
   var ul = $("#skills ul");
@@ -72,9 +81,50 @@ function loadSkills() {
   //console.warn("end");
 }
 
+//HR Skills
+
+function showHrSkills(skills) {
+  var htmlSkills = skills.map(function (skill) {
+    console.info("skill", skill);
+    return `<li>${skill.name}</li>`;
+  });
+  console.info("skills", htmlSkills);
+  var ul = $("#hrSkills");
+  ul.innerHTML = htmlSkills.join("");
+}
+
+function loadHrSkills() {
+  var response = fetch("hrskills.json");
+  var loaded = response.then(function (r) {
+    return r.json();
+  });
+  loaded.then(function (skills) {
+    showHrSkills(skills);
+  });
+}
+
+function showTableOfFour() {
+  var checkBox = document.getElementById("four");
+  var table = document.getElementById("tableOfFour");
+  if (checkBox.checked == true) {
+    table.style.display = "block";
+  } else {
+    table.style.display = "none";
+  }
+}
+
+function showTableOfNine() {
+  var checkBox = document.getElementById("nine");
+  var table = document.getElementById("tableOfNine");
+  if (checkBox.checked == true) {
+    table.style.display = "block";
+  } else {
+    table.style.display = "none";
+  }
+}
 //start our code
 
 showPage(activePage);
 $("#top-menu-bar").addEventListener("click", clickOnMenu);
-
 loadSkills();
+loadHrSkills();
