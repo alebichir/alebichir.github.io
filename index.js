@@ -56,7 +56,7 @@ function sortByName(a, b) {
 
 function showSkills(skills) {
   skills.sort(sortByEndorcements);
-  const htmlSkills = skills.map(function (skill) {
+  const htmlSkills = skills.map((skill) => {
     //<li class="favorite">HTML</li>
     console.info("skill", skill);
     const cls = skill.favorite ? "favorite" : "";
@@ -70,10 +70,10 @@ function showSkills(skills) {
 function loadSkills() {
   //console.time("load");
   const response = fetch("skills.json");
-  const loaded = response.then(function (r) {
+  const loaded = response.then((r) => {
     return r.json();
   });
-  loaded.then(function (skills) {
+  loaded.then((skills) => {
     showSkills(skills);
     //console.timeEnd("load");
     //console.warn("ready");
@@ -85,10 +85,10 @@ function loadSkills() {
 
 function showHrSkills(skills) {
   const htmlSkills = skills.map(function (skill) {
-    console.info("skill", skill);
+    //console.info("skill", skill);
     return `<li>${skill.name}</li>`;
   });
-  console.info("skills", htmlSkills);
+  //console.info("skills", htmlSkills);
   const ul = $("#hrSkills");
   ul.innerHTML = htmlSkills.join("");
 }
@@ -127,11 +127,11 @@ function showTableOfNine() {
 
 function showWorkExperience(positions) {
   const htmlPositions = positions.map(function (position) {
-    console.info("position", position);
+    //console.info("position", position);
     const cls = position.current ? "current" : "";
     return `<li class="${cls}">${position.company} - ${position.position} (${position.start} - ${position.finish}) </li>`;
   });
-  console.info("positions", htmlPositions);
+  //console.info("positions", htmlPositions);
   const ul = $("#workExperience");
   ul.innerHTML = htmlPositions.join("");
 }
