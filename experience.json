@@ -1,0 +1,58 @@
+[
+  {
+    "company": "TEC: Digital Agency",
+    "position": "Human Resources Consultant",
+    "start": "Dec 2018",
+    "duration": "4 years 7 months",
+    "location": "Cluj-Napoca",
+    "current": true
+  },
+  {
+    "company": "Lumea Ca lumea",
+    "position": "Social Worker",
+    "start": "Mar 2018",
+    "finish": "Oct 2018",
+    "duration": "8 months",
+    "location": "Cluj-Napoca"
+  },
+  {
+    "company": "Cofetaria Lemnul Verde",
+    "position": "Salesperson",
+    "start": "Jun 2017",
+    "finish": "Feb 2018",
+    "duration": "9 months",
+    "location": "Cluj-Napoca"
+  },
+  {
+    "company": "Music Camp International Romania",
+    "position": "Social Worker",
+    "start": "Mar 2017",
+    "finish": "Jun 2017",
+    "duration": "4 months",
+    "location": "Cluj-Napoca"
+  },
+  {
+    "company": "Estuar Foundation",
+    "position": "Social Worker",
+    "start": "Jul 2015",
+    "finish": "Feb 2017",
+    "duration": "1 year 8 months",
+    "location": "Cluj-Napoca"
+  },
+  {
+    "company": "Universitatea Babeș-Bolyai din Cluj-Napoca",
+    "position": "Group Coordinator",
+    "start": "Oct 2015",
+    "finish": "Jul 2016",
+    "duration": "10 months",
+    "location": "Cluj-Napoca"
+  },
+  {
+    "company": "Asociația pentru ajutor mutual Cluj",
+    "position": "Quantitative Research Coordinator",
+    "start": "Dec 2014",
+    "finish": "Mar 2015",
+    "duration": "4 months",
+    "location": "Cluj-Napoca"
+  }
+]

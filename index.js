@@ -1,4 +1,4 @@
-var activePage = "skills";
+var activePage = "home";
 
 //utilities functions
 
@@ -122,9 +122,34 @@ function showTableOfNine() {
     table.style.display = "none";
   }
 }
+
+//work experience
+
+function showWorkExperience(positions) {
+  var htmlPositions = positions.map(function (position) {
+    console.info("position", position);
+    var cls = position.current ? "current" : "";
+    return `<li class="${cls}">${position.company} - ${position.position} (${position.start} - ${position.finish}) </li>`;
+  });
+  console.info("positions", htmlPositions);
+  var ul = $("#workExperience");
+  ul.innerHTML = htmlPositions.join("");
+}
+
+function loadWorkExperience() {
+  var response = fetch("experience.json");
+  var loaded = response.then(function (r) {
+    return r.json();
+  });
+  loaded.then(function (positions) {
+    showWorkExperience(positions);
+  });
+}
+
 //start our code
 
 showPage(activePage);
 $("#top-menu-bar").addEventListener("click", clickOnMenu);
 loadSkills();
 loadHrSkills();
+loadWorkExperience();

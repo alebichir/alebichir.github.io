@@ -99,6 +99,11 @@ h2 {
   font-weight: 100;
 }
 
+.current {
+  font-weight: bold;
+  color: #0798ab;
+}
+
 #top-menu-bar {
   margin: 0;
   text-align: center;
