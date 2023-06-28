@@ -1,5 +1,17 @@
 let activePage = "home";
 
+(function () {
+  const hash = document.location.hash.substring(1);
+  //console.warn("hash", hash);
+  if (hash) {
+    const link = $(`#top-menu-bar a[data-page=${hash}]`);
+    //console.warn("initial link", link);
+    if (link) {
+      activePage = hash;
+    }
+  }
+})();
+
 //utilities functions
 
 function $(selector) {
@@ -42,6 +54,7 @@ function clickOnMenu(e) {
     if (id) {
       //if (e.target.matches("a") & id) {
       showPage(id);
+      document.location.hash = `#${id}`;
     }
   }
 }
