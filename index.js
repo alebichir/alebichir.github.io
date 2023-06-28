@@ -74,7 +74,8 @@ function showSkills(skills) {
     //<li class="favorite">HTML</li>
     //console.info("skill", skill);
     const cls = skill.favorite ? "favorite" : "";
-    return `<li class="${cls}">${skill.name} <span>- ${skill.endorcements}</span></li>`;
+    return `<li class="${cls}">
+        ${skill.name} <span>- ${skill.endorcements}</span></li>`;
   });
   //console.info("skills", htmlSkills);
   const ul = $("#skills ul");
