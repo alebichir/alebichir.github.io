@@ -1,4 +1,4 @@
-var activePage = "home";
+let activePage = "home";
 
 //utilities functions
 
@@ -12,30 +12,30 @@ function hide(id) {
 }
 
 function show(id) {
-  var page = $("#" + id);
+  const page = $("#" + id);
   console.info("show %o", id, page);
   page.style.display = "block";
 }
 
 function showPage(id) {
-  var oldLink = $(`#top-menu-bar a[data-page=${activePage}]`);
+  const oldLink = $(`#top-menu-bar a[data-page=${activePage}]`);
   oldLink.classList.remove("active");
 
   hide(activePage);
 
   activePage = id;
 
-  var link = $(`#top-menu-bar a[data-page=${activePage}]`);
+  const link = $(`#top-menu-bar a[data-page=${activePage}]`);
   link.classList.add("active");
 
   show(activePage);
 }
 
 function clickOnMenu(e) {
-  var link = e.target.closest("a");
+  const link = e.target.closest("a");
   //console.warn("click", link, e.target);
   if (link) {
-    var id = link.dataset.page;
+    const id = link.dataset.page;
     //console.warn("click %o menu", e.target.getAttribute("data-page"));
     //console.warn("click %o menu", id, e.target.matches("a"));
     //console.warn("click %o menu", id);
@@ -56,21 +56,21 @@ function sortByName(a, b) {
 
 function showSkills(skills) {
   skills.sort(sortByEndorcements);
-  var htmlSkills = skills.map(function (skill) {
+  const htmlSkills = skills.map(function (skill) {
     //<li class="favorite">HTML</li>
     console.info("skill", skill);
-    var cls = skill.favorite ? "favorite" : "";
+    const cls = skill.favorite ? "favorite" : "";
     return `<li class="${cls}">${skill.name} <span>- ${skill.endorcements}</span></li>`;
   });
   console.info("skills", htmlSkills);
-  var ul = $("#skills ul");
+  const ul = $("#skills ul");
   ul.innerHTML = htmlSkills.join("");
 }
 
 function loadSkills() {
   //console.time("load");
-  var response = fetch("skills.json");
-  var loaded = response.then(function (r) {
+  const response = fetch("skills.json");
+  const loaded = response.then(function (r) {
     return r.json();
   });
   loaded.then(function (skills) {
@@ -84,18 +84,18 @@ function loadSkills() {
 //HR Skills
 
 function showHrSkills(skills) {
-  var htmlSkills = skills.map(function (skill) {
+  const htmlSkills = skills.map(function (skill) {
     console.info("skill", skill);
     return `<li>${skill.name}</li>`;
   });
   console.info("skills", htmlSkills);
-  var ul = $("#hrSkills");
+  const ul = $("#hrSkills");
   ul.innerHTML = htmlSkills.join("");
 }
 
 function loadHrSkills() {
-  var response = fetch("hrskills.json");
-  var loaded = response.then(function (r) {
+  const response = fetch("hrskills.json");
+  const loaded = response.then(function (r) {
     return r.json();
   });
   loaded.then(function (skills) {
@@ -104,8 +104,8 @@ function loadHrSkills() {
 }
 
 function showTableOfFour() {
-  var checkBox = document.getElementById("four");
-  var table = document.getElementById("tableOfFour");
+  const checkBox = document.getElementById("four");
+  const table = document.getElementById("tableOfFour");
   if (checkBox.checked == true) {
     table.style.display = "block";
   } else {
@@ -114,8 +114,8 @@ function showTableOfFour() {
 }
 
 function showTableOfNine() {
-  var checkBox = document.getElementById("nine");
-  var table = document.getElementById("tableOfNine");
+  const checkBox = document.getElementById("nine");
+  const table = document.getElementById("tableOfNine");
   if (checkBox.checked == true) {
     table.style.display = "block";
   } else {
@@ -126,19 +126,19 @@ function showTableOfNine() {
 //work experience
 
 function showWorkExperience(positions) {
-  var htmlPositions = positions.map(function (position) {
+  const htmlPositions = positions.map(function (position) {
     console.info("position", position);
-    var cls = position.current ? "current" : "";
+    const cls = position.current ? "current" : "";
     return `<li class="${cls}">${position.company} - ${position.position} (${position.start} - ${position.finish}) </li>`;
   });
   console.info("positions", htmlPositions);
-  var ul = $("#workExperience");
+  const ul = $("#workExperience");
   ul.innerHTML = htmlPositions.join("");
 }
 
 function loadWorkExperience() {
-  var response = fetch("experience.json");
-  var loaded = response.then(function (r) {
+  const response = fetch("experience.json");
+  const loaded = response.then(function (r) {
     return r.json();
   });
   loaded.then(function (positions) {
