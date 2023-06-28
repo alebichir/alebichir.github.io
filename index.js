@@ -55,30 +55,23 @@ function sortByName(a, b) {
 }
 
 function showSkills(skills) {
+  //console.warn("am intrat in functia show", skills);
   skills.sort(sortByEndorcements);
   const htmlSkills = skills.map((skill) => {
     //<li class="favorite">HTML</li>
-    console.info("skill", skill);
+    //console.info("skill", skill);
     const cls = skill.favorite ? "favorite" : "";
     return `<li class="${cls}">${skill.name} <span>- ${skill.endorcements}</span></li>`;
   });
-  console.info("skills", htmlSkills);
+  //console.info("skills", htmlSkills);
   const ul = $("#skills ul");
   ul.innerHTML = htmlSkills.join("");
 }
 
 function loadSkills() {
-  //console.time("load");
   const response = fetch("skills.json");
-  const loaded = response.then((r) => {
-    return r.json();
-  });
-  loaded.then((skills) => {
-    showSkills(skills);
-    //console.timeEnd("load");
-    //console.warn("ready");
-  });
-  //console.warn("end");
+  const loaded = response.then((r) => r.json());
+  loaded.then(showSkills);
 }
 
 //HR Skills
