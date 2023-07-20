@@ -157,6 +157,9 @@ function loadWorkExperience() {
 
 showPage(activePage);
 $("#top-menu-bar").addEventListener("click", clickOnMenu);
+$("#colorblind").addEventListener("click", () => {
+  document.body.classList.toggle("grayscale");
+});
 loadSkills();
 loadHrSkills();
 loadWorkExperience();
